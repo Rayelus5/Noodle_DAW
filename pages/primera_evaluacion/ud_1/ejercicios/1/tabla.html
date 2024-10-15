@@ -104,6 +104,29 @@
         color: rgb(50, 189, 94);
       }
 
+      .tabla {
+        border-color: #ffffff;
+        border-radius: 20px;
+        padding: 10px;
+        width: 100%;
+        background-color: #111;
+        
+      }
+
+      .tabla-first {
+        background-color: rgb(50, 189, 94);
+        color: #111;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .tabla td {
+        background-color: rgb(226, 226, 226);
+        color: #111;
+        font-weight: bold;
+      }
+
       
     </style>
   </head>
@@ -113,16 +136,15 @@
         <ul class="nav-ul">
           <li class="nav-li"><a href="index.html">Menú inicio</a></li>
           <li class="nav-li"><a href="web.html">Web</a></li>
-          <li class="nav-li"><a class="active" href="#">Video</a></li>
-          <li class="nav-li"><a href="tabla.html">Tabla</a></li>
-
+          <li class="nav-li"><a href="video.html">Video</a></li>
+          <li class="nav-li"><a class="active" href="#">Tabla</a></li>
         </ul>
       </nav>
     </header>
 
     <div style="text-align: center;">
         <h1 style="font-family: 'Times New Roman', Times, serif;">Hábitos Saludables</h1>
-        <p>Un video que habla sobre la importancia de mantener hábitos saludables.</p>
+        <p>Una rutina de ejercicios en una tabla.</p>
     </div>
 
     <br>
@@ -131,7 +153,64 @@
 
     <section>
       <article>
-        <iframe width="100%" height="380px" src="https://www.youtube.com/embed/Ggh3biRxraY?si=KMSt1_2kUSqjiuzB&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <table border="3" class="tabla">
+            <tr class="tabla-first">
+                <th>Dia</th>
+                <th>Ejercicio</th>
+                <th>Series</th>
+                <th>Repeticiones</th>
+                <th>Peso (kg)</th>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>Press banca</td>
+                <td>3</td>
+                <td>8-12</td>
+                <td>30-40</td>
+            </tr>
+            <tr>
+                <td>Martes</td>
+                <td>Remo</td>
+                <td>3</td>
+                <td>8-12</td>
+                <td>30-40</td>
+            </tr>
+            <tr>
+                <td>Miercoles</td>
+                <td>Descanso</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jueves</td>
+                <td>Prensa hombros</td>
+                <td>3</td>
+                <td>8-12</td>
+                <td>30-40</td>
+            </tr>
+            <tr>
+                <td>Viernes</td>
+                <td>Triceps</td>
+                <td>3</td>
+                <td>8-12</td>
+                <td>30-40</td>
+            </tr>
+            <tr>
+                <td>Sabado</td>
+                <td>Descanso</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>Descanso</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
       </article>
 
     <script>
