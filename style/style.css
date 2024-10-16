@@ -252,3 +252,13 @@ a {
     display: none;
   }
 }
+
+@media screen and (max-width: 500px) {
+  article {
+    max-width: 325px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
