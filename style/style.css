@@ -170,3 +170,60 @@
     filter: blur(0);
     transition: 2s;
   }
+
+  .icon {
+    width: 28px;
+  }
+
+  .icon-blog {
+    width: 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .rayelus-logo-div {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+    .icon {
+      width: 20px;
+    }
+    .icon-blog {
+      width: 20px;
+    }
+    .blog-date {
+      font-size: 10px;
+    }
+
+    .blog-post h3 {
+      font-size: 18px;
+      text-align: left;
+    }
+    
+    p {
+      font-size: 13px;
+    }
+    .btn-article {
+      font-size: 13px;
+    }
+    
+    .nav-li a {
+      font-size: 15px;
+      padding: 30px 10px 0px 10px;
+      margin: 0;
+    }
+
+    .rayelus-logo-div {
+      display: none;
+    }
+  }
