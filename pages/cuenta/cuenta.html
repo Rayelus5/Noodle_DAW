@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lenguaje de Marcas - 1DAW</title>
+    <title id="title-page"></title>
     <link rel="stylesheet" href="../../style/style.css">
   </head>
   <body>
@@ -22,23 +22,38 @@
 
     <section>
 
-      <article class="account-article">
+      <article id="account-article" class="account-article">
         <div class="blog-post">
-          <h3> <img class="icon-blog" style="vertical-align: top; filter: hue-rotate(10deg);" src="https://icones.pro/wp-content/uploads/2021/05/symbole-de-l-homme-vert.png"> Acceso Alumnado</h3>
+          <h3> <img class="icon-blog" style="vertical-align: top; filter: hue-rotate(10deg);" src="https://icones.pro/wp-content/uploads/2021/05/symbole-de-l-homme-vert.png"> <span id="account-title">Acceso Alumnado</span></h3>
           <span class="blog-date"></span>
         </div>
-        <p>
+        <p id="article-info">
             Inicia sesión en tu cuenta de alumno.
         </p>
 
-        <form action="">
+        <form id="account-form" action="">
           <input placeholder="Usuario" id="userAlumno" name="userAlumno" class="account-input" type="text" maxlength="20">
           <br>
-          <input placeholder="Contraseña" id="passwordAlumno" name="passwordAlumno" class="account-input" type="text" maxlength="30">
+          <input placeholder="Contraseña" id="passwordAlumno" name="passwordAlumno" class="account-input" type="password" maxlength="30">
           <br>
-          <button onclick="" class="btn-article">Iniciar Sesión</button>
-          <br><br>
+          <button onclick="loginAccount()" class="btn-article">Iniciar Sesión</button>
+          <br>
+          <p id="errorMsg" style="color: red; font-size: 13px;"></p>
+          <br>
         </form>
+
+        <div id="account-tarea">
+          <br>
+          <hr class="separation-line-1">
+          <h3>Material y recursos</h3>
+          <div class="material-tarea">
+            <a class="btn-article material-tarea-btn" target="_parent" href="../calendario/examenes.html">Calendario de Exámenes</a>
+            <a class="btn-article material-tarea-btn" target="_parent" href="../calendario/tareas.html">Calendario de Tareas</a>
+            <a class="btn-article material-tarea-btn" href="#">Horario de clase (Próximamente)</a>
+          </div>
+        </div>
+
+        <br><br>
       </article>
 
       
