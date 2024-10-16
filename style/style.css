@@ -1,229 +1,233 @@
-
 :root {
-    --principal-color: rgb(50, 189, 94);
-    --secundary-color: rgb(157, 255, 188);
-    --third-color: rgb(32, 134, 65);
+  --principal-color: rgb(50, 189, 94);
+  --secundary-color: rgb(157, 255, 188);
+  --third-color: rgb(32, 134, 65);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+body {
+  background-color: #1e1e1e;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #fff;
+  text-align: justify;
+}
+
+header {
+  background-color: rgb(0, 0, 0);
+  display: grid;
+}
+
+.separation-line-1 {
+  border: 1px solid var(--principal-color);
+}
+.separation-line-2 {
+  border: 2px solid var(--principal-color);
+}
+.separation-line-3 {
+  border: 10px dotted var(--principal-color);
+}
+.separation-line-4 {
+  border: 4px solid var(--principal-color);
+}
+.separation-line-5 {
+  border: 5px solid var(--principal-color);
+}
+
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav-li {
+  float: left;
+}
+
+.nav-li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 16px 14px 16px;
+  margin: 0 10px;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  height: 100%;
+  transition: 0.8s ease;
+}
+
+.active {
+  background-color: var(--principal-color);
+  box-shadow: inset 0px 0px 15px var(--principal-color);
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav-li a:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+  text-shadow: 0px 0px 5px #fff;
+  border-radius: 40px;
+  transition: 0.3s ease;
+}
+
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 75px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: var(--principal-color);
+}
+
+h2 {
+  font-size: 35px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: var(--principal-color);
+}
+
+h3 {
+  font-size: 25px;
+  color: var(--secundary-color);
+}
+
+article {
+  padding: 10px 30px;
+  background-color: #2b2b2b;
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 25px auto;
+}
+
+footer {
+  background-color: var(--principal-color);
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.blog-post {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-date {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: var(--principal-color);
+  margin: 20px 0px 0px 50px;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: var(--principal-color);
+}
+
+::selection {
+  color: #fff;
+  background: var(--principal-color);
+}
+
+a {
+  color: var(--principal-color);
+}
+
+.btn-article {
+  background-color: var(--third-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.6s ease;
+}
+
+.btn-article:hover {
+  background-color: var(--principal-color);
+  transition: 1s ease;
+}
+
+.rayelus-logo:hover {
+  filter: blur(2px);
+  transition: 1s;
+}
+
+.rayelus-logo {
+  filter: blur(0);
+  transition: 2s;
+}
+
+.icon {
+  width: 28px;
+}
+
+.icon-blog {
+  width: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .rayelus-logo-div {
+    display: none;
   }
-  body {
-    background-color: #1e1e1e;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    color: #fff;
-    text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
   }
 
-  header {
-    background-color: rgb(0, 0, 0);
-    display: grid;
+  h1 {
+    font-size: 50px;
+  }
+  .icon {
+    width: 20px;
+  }
+  .icon-blog {
+    width: 20px;
+  }
+  .blog-date {
+    font-size: 10px;
   }
 
-  .separation-line-1 {
-    border: 1px solid var(--principal-color);
-  }
-  .separation-line-2 {
-    border: 2px solid var(--principal-color);
-  }
-  .separation-line-3 {
-    border: 10px dotted var(--principal-color);
-  }
-  .separation-line-4 {
-    border: 4px solid var(--principal-color);
-  }
-  .separation-line-5 {
-    border: 5px solid var(--principal-color);
-  }
-
-  .nav-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-
-  .nav-li {
-    float: left;
-  }
-
-  .nav-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 30px 16px 14px 16px;
-    margin: 0 10px;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    height: 100%;
-    transition: 0.8s ease;
-  }
-
-  .active {
-    background-color: var(--principal-color);
-    box-shadow: inset 0px 0px 15px var(--principal-color);
-  }
-
-  /* Change the link color to #111 (black) on hover */
-  .nav-li a:hover {
-    background-color: #1e1e1e;
-    color: #fff;
-    text-shadow: 0px 0px 5px #fff;
-    border-radius: 40px;
-    transition: 0.3s ease;
+  .blog-post h3 {
+    font-size: 18px;
+    text-align: left;
   }
 
   p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
   }
-
-
-  h1 {
-    font-size: 75px;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    color: var(--principal-color);
-  }
-
-  h2 {
-    font-size: 35px;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    color: var(--principal-color);
-  }
-
-  h3 {
-    font-size: 25px;
-    color: var(--secundary-color);
-  }
-
-  article {
-    padding: 10px 30px;
-    background-color: #2b2b2b;
-    border-radius: 20px;
-    max-width: 700px;
-    margin: 25px auto;
-  }
-
-  footer {
-    background-color: var(--principal-color);
-    display: block;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-  }
-
-  .blog-post {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .blog-date {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    color: var(--principal-color);
-    margin: 20px 0px 0px 50px;
-  }
-
-  ::-moz-selection {
-    /* Code for Firefox */
-    color: #fff;
-    background: var(--principal-color);
-  }
-
-  ::selection {
-    color: #fff;
-    background: var(--principal-color);
-  }
-
-  a {
-    color: var(--principal-color);
-  }
-
   .btn-article {
-    background-color: var(--third-color);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.6s ease;
+    font-size: 13px;
   }
 
-  .btn-article:hover {
-    background-color: var(--principal-color);
-    transition: 1s ease;
+  .nav-li a {
+    font-size: 15px;
+    padding: 30px 10px 0px 10px;
+    margin: 0;
   }
 
-  .rayelus-logo:hover {
-    filter: blur(2px);
-    transition: 1s;
+  .rayelus-logo-div {
+    display: none;
   }
-
-  .rayelus-logo {
-    filter: blur(0);
-    transition: 2s;
-  }
-
-  .icon {
-    width: 28px;
-  }
-
-  .icon-blog {
-    width: 30px;
-  }
-
-  @media screen and (max-width: 800px) {
-    .rayelus-logo-div {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    
-    ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent; /* make scrollbar transparent */
-    }
-
-    h1 {
-      font-size: 50px;
-    }
-    .icon {
-      width: 20px;
-    }
-    .icon-blog {
-      width: 20px;
-    }
-    .blog-date {
-      font-size: 10px;
-    }
-
-    .blog-post h3 {
-      font-size: 18px;
-      text-align: left;
-    }
-    
-    p {
-      font-size: 13px;
-    }
-    .btn-article {
-      font-size: 13px;
-    }
-    
-    .nav-li a {
-      font-size: 15px;
-      padding: 30px 10px 0px 10px;
-      margin: 0;
-    }
-
-    .rayelus-logo-div {
-      display: none;
-    }
-  }
+}
