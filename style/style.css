@@ -188,12 +188,20 @@ a {
   .rayelus-logo-div {
     display: none;
   }
+
+  article {
+    max-width: 500px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
+  }
+
+  article {
+    max-width: 400px;
   }
 
   h1 {
