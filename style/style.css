@@ -192,6 +192,19 @@ a {
   article {
     max-width: 500px;
   }
+
+  .blog-post h3 {
+    font-size: 18px;
+    text-align: left;
+  }
+  .icon {
+    width: 22px;
+    margin-right: 5px;
+  }
+  .icon-blog {
+    width: 22px;
+    margin-right: 5px;
+  }
 }
 
 @media screen and (max-width: 600px) {
