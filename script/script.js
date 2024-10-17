@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             accountTitle.innerText = "¡Bienvenid@ a tu cuenta!";
         }
         if (accountInfo) {
-            accountInfo.innerHTML = "Hola de nuevo, <b>" + user + "</b>.<br><br> Aquí podrás encontrar todo tu material necesario para afrontar el curso. Tienes un calendario con los próximos exámenes y actividades.";
+            accountInfo.innerHTML = 'Hola de nuevo, <b style="font-weight: bold;">' + user + "</b>.<br><br> Aquí podrás encontrar todo tu material necesario para afrontar el curso. Tienes un calendario con los próximos exámenes y actividades.";
         }
         if (accountTarea) {
             accountTarea.setAttribute("style", "display: block;");
