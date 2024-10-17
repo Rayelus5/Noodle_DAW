@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Jaime Rubio Casado",
         "Marcos Ruiz Lerma",
         "Blas Sanchez Paniagua",
-        "Israel",
+        "Israel Sanchez",
         "Daniel Trigo Escobar",
         "Alba Vazquez Guillen",
         "Samuel Villa Torres"
