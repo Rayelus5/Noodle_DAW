@@ -162,7 +162,7 @@ footer {
 
 
 .account-article {
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .blog-post {
@@ -233,7 +233,7 @@ a {
   }
 
   .account-article {
-    max-width: 300px;
+    max-width: 500px;
   }
 
   article {
@@ -268,7 +268,7 @@ a {
   }
 
   .account-article {
-    max-width: 250px;
+    max-width: 400px;
   }
 
   article {
@@ -326,7 +326,7 @@ a {
   }
 
   .account-article {
-    max-width: 200px;
+    max-width: 350px;
   }
 
   h2 {
