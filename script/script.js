@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     // Asegúrate de que la función loginAccount esté disponible globalmente si es necesario
     window.loginAccount = loginAccount;
 });
