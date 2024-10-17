@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Jaime Rubio Casado",
         "Marcos Ruiz Lerma",
         "Blas Sanchez Paniagua",
+        "Israel Sanchez",
         "Daniel Trigo Escobar",
         "Alba Vazquez Guillen",
         "Samuel Villa Torres"
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             accountTitle.innerText = "¡Bienvenid@ a tu cuenta!";
         }
         if (accountInfo) {
-            accountInfo.innerHTML = "Hola de nuevo, <b>" + user + "</b>.<br><br> Aquí podrás encontrar todo tu material necesario para afrontar el curso. Tienes un calendario con los próximos exámenes y actividades.";
+            accountInfo.innerHTML = 'Hola de nuevo, <b style="font-weight: bold;">' + user + "</b>.<br><br> Aquí podrás encontrar todo tu material necesario para afrontar el curso. Tienes un calendario con los próximos exámenes y actividades.";
         }
         if (accountTarea) {
             accountTarea.setAttribute("style", "display: block;");
@@ -153,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Usuario no válido. Por favor, introduce un nick válido.");
         }
     }
+
 
     // Asegúrate de que la función loginAccount esté disponible globalmente si es necesario
     window.loginAccount = loginAccount;
