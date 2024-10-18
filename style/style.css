@@ -106,6 +106,7 @@ header {
   width: 100px;
   animation: flotar 4s ease-in-out infinite;
   transition: 1s;
+  cursor: pointer;
 }
 
 .noodle-emoji1 {
@@ -115,6 +116,7 @@ header {
   left: 80px;
   rotate: -25deg;
   width: 80px;
+  cursor: pointer;
   
   animation: flotar 3s ease-in-out infinite;
   transition: 1s;
@@ -166,12 +168,16 @@ h1 {
   height: auto;
   text-align: center;
   color: var(--principal-color);
-  transition: 1.3s ease-out;
+  transition: 1s ease-out;
 }
 
 h1:hover {
-  color: #fff;
-  transition: 0.4s ease-in-out;
+  color: var(--third-color);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  filter: blur(1px);
+  scale: 0.95;
+  transform: rotateX(12deg) rotateY(12deg);
 }
 
 h2 {
