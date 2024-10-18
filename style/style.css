@@ -199,6 +199,13 @@ article {
   border-radius: 20px;
   max-width: 700px;
   margin: 25px auto;
+  transition: 1.5s;
+}
+
+article:hover {
+  transform: rotateX(5deg) rotateY(5deg);
+  scale: 1.03;
+  transition: 0.5s;
 }
 
 footer {
