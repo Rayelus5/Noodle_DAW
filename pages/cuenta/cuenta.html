@@ -31,12 +31,17 @@
             Inicia sesión en tu cuenta de alumno.
         </p>
 
+        <br>
+
         <form id="account-form" action="">
-          <input placeholder="Usuario" id="userAlumno" name="userAlumno" class="account-input" type="text" maxlength="20">
-          <br>
-          <input placeholder="Contraseña" id="passwordAlumno" name="passwordAlumno" class="account-input" type="password" maxlength="30">
-          <br>
-          <button onclick="loginAccount()" class="btn-article">Iniciar Sesión</button>
+
+          <div class="account-inputs-box">
+            <input placeholder="Usuario" id="userAlumno" name="userAlumno" class="account-input" type="text" maxlength="20">
+            <br>
+            <input placeholder="Contraseña" id="passwordAlumno" name="passwordAlumno" class="account-input" type="password" maxlength="30">
+          </div>
+
+          <button onclick="loginAccount()" class="btn-article login-btn">Iniciar Sesión</button>
           <br>
           <p id="errorMsg" style="color: red; font-size: 13px;"></p>
           <br>

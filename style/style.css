@@ -193,16 +193,23 @@ footer {
   font-size: 20px;
 }
 
+.account-inputs-box {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  justify-content: center;
+}
+
 .account-input {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   border: solid 3px var(--principal-color);
-  padding: 5px 10px 5px 10px;
-  margin-bottom: 10px;
+  padding: 5px 0px 5px 10px;
   color: var(--principal-color);
   font-weight: bold;
   transition: 0.5s ease;
-  font-size: 18px;
+  font-size: 16px;
+  width: 100%;
 }
 
 .account-input:hover {
@@ -210,6 +217,12 @@ footer {
   border: solid 3px var(--third-color);
   color: #000000;
   transition: 0.2s ease;
+}
+
+.login-btn {
+  width: 100%;
+  font-size: 15px;
+  margin-top: 30px;
 }
 
 
