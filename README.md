@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <img src="https://icon-library.com/images/html5-icon-png/html5-icon-png-1.jpg" alt="HTML" width="400">
+  <img src="https://i.ibb.co/WgCzmHs/favicon.png" alt="HTML" width="150">
   <br>
   Noodle DAW 2024 - 2025
   <br>
