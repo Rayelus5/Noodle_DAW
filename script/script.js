@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cboxmain.setAttribute("height", "1400px");
     }
     if (cboxcuenta) {
-        cboxcuenta.setAttribute("height", "900px");
+        cboxcuenta.setAttribute("height", "1200px");
     }
 
     // Recupera el usuario almacenado en localStorage
