@@ -25,6 +25,13 @@ header {
   display: grid;
 }
 
+.account-nav-icon {
+  width: 25px;
+  margin-right: 5px;
+  vertical-align: middle;
+  filter: hue-rotate(10deg);
+}
+
 .material-tarea {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -379,6 +386,11 @@ a {
     background: transparent; /* make scrollbar transparent */
   }
 
+  .account-nav-icon {
+    width: 15px;
+    margin-right: 3px;
+  }
+
   .account-article {
     max-width: 400px;
   }
@@ -460,6 +472,11 @@ a {
 
   article {
     max-width: 325px;
+  }
+
+  .account-nav-icon {
+    width: 15px;
+    margin-right: 4px;
   }
 
   .account-input {
