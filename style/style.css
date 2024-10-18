@@ -122,11 +122,15 @@ header {
 
 .noodle-emoji1:hover {
   rotate: 250deg;
+  scale: 1.4;
+  filter: blur(1px) hue-rotate(50deg);
   transition: 1.5s ease;
 }
 
 .noodle-emoji2:hover {
   rotate: -250deg;
+  scale: 1.5;
+  filter: blur(1px) hue-rotate(50deg);
   transition: 1s ease;
 }
 
