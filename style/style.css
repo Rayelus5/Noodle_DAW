@@ -4,6 +4,8 @@
   --third-color: rgb(32, 134, 65);
 }
 
+/**/
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
