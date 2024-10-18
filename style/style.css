@@ -227,7 +227,7 @@ footer {
 
 
 .account-article {
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .blog-post {
@@ -323,7 +323,11 @@ a {
   }
 
   .account-article {
+<<<<<<< HEAD
     max-width: 350px;
+=======
+    max-width: 500px;
+>>>>>>> c72653199031d86235f8cac4a64f9bb81fb00259
   }
 
   article {
@@ -377,7 +381,11 @@ a {
   }
 
   .account-article {
+<<<<<<< HEAD
     max-width: 300px;
+=======
+    max-width: 400px;
+>>>>>>> c72653199031d86235f8cac4a64f9bb81fb00259
   }
 
   article {
@@ -464,7 +472,11 @@ a {
   }
 
   .account-article {
+<<<<<<< HEAD
     max-width: 300px;
+=======
+    max-width: 350px;
+>>>>>>> c72653199031d86235f8cac4a64f9bb81fb00259
   }
 
   h2 {
