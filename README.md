@@ -3,13 +3,13 @@
   <br>
   <img src="https://icon-library.com/images/html5-icon-png/html5-icon-png-1.jpg" alt="HTML" width="400">
   <br>
-  Lenguaje de Marcas Course 2024 - 2025
+  Noodle DAW 2024 - 2025
   <br>
 </h1>
 <p align="center">By Rayelus for CFGS of DAW</p><br>
 
-<h4 align="center">Un curso de Lenguaje de Marcas de Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web</a>
-	<br><br>Impartido en el I.E.S. Hermanos Machado (Dos Hermanas)
+<h4 align="center">Un portal web para mi curso de Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web</a>
+	<br><br>En el I.E.S. Hermanos Machado (Dos Hermanas)
 </h4>
 
 <p align="center">
