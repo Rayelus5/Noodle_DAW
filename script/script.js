@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Verifica si los elementos cboxmain y cboxcuenta existen antes de usarlos
     if (cboxmain) {
-        cboxmain.setAttribute("height", "1200px");
+        cboxmain.setAttribute("height", "1400px");
     }
     if (cboxcuenta) {
         cboxcuenta.setAttribute("height", "900px");

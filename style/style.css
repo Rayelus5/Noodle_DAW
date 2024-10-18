@@ -310,7 +310,7 @@ a {
   }
 
   .account-article {
-    max-width: 300px;
+    max-width: 350px;
   }
 
   article {
@@ -364,7 +364,7 @@ a {
   }
 
   .account-article {
-    max-width: 250px;
+    max-width: 300px;
   }
 
   article {
@@ -451,7 +451,7 @@ a {
   }
 
   .account-article {
-    max-width: 200px;
+    max-width: 300px;
   }
 
   h2 {
@@ -493,5 +493,11 @@ a {
     rotate: -25deg;
     width: 40px;
     
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .account-article {
+    max-width: 100%;
   }
 }
