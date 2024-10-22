@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Obtén los elementos del DOM después de que esté completamente cargado
     const titlePage = document.getElementById("title-page");

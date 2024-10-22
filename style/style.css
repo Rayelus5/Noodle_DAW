@@ -2,6 +2,10 @@
   --principal-color: rgb(50, 189, 94);
   --secundary-color: rgb(157, 255, 188);
   --third-color: rgb(32, 134, 65);
+
+  --article-bg: #2b2b2b;
+  --bg-color: #1e1e1e;
+  --text-color: #fff;
 }
 
 /*-*/
@@ -13,11 +17,11 @@
 
 body {
   user-select: none;
-  background-color: #1e1e1e;
+  background-color: var(--bg-color);
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: #fff;
+  color: var(--text-color);
   text-align: justify;
 }
 
@@ -63,7 +67,7 @@ header {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--article-bg);
 }
 
 .nav-li {
@@ -91,10 +95,10 @@ header {
 
 /* Change the link color to #111 (black) on hover */
 .nav-li a:hover {
-  background-color: #1e1e1e;
-  color: #fff;
-  text-shadow: 0px 0px 5px #fff;
+  background-color: var(--bg-color);
   border-radius: 30px;
+  color: var(--principal-color);
+  font-size: 1.8vh;
   transition: 0.3s ease;
 }
 
@@ -161,6 +165,7 @@ header {
 
 p {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-color);
 }
 
 h1 {
@@ -196,7 +201,7 @@ h3 {
 
 article {
   padding: 10px 30px;
-  background-color: #2b2b2b;
+  background-color: var(--article-bg);
   border-radius: 20px;
   max-width: 700px;
   margin: 25px auto;
