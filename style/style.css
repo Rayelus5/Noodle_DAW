@@ -1,6 +1,6 @@
 :root {
   --principal-color: rgb(50, 189, 94);
-  --secundary-color: rgb(157, 255, 188);
+  --secondary-color: rgb(157, 255, 188);
   --third-color: rgb(32, 134, 65);
 
   --article-bg: #2b2b2b;
@@ -90,7 +90,11 @@ header {
 
 .active {
   background-color: var(--principal-color);
-  box-shadow: inset 0px 0px 15px var(--principal-color);
+}
+
+.nav-li .active:hover {
+  background-color: #283f21;
+  color: #fff,
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -196,7 +200,7 @@ h2 {
 
 h3 {
   font-size: 25px;
-  color: var(--secundary-color);
+  color: var(--secondary-color);
 }
 
 article {
@@ -310,8 +314,10 @@ a {
 }
 
 .rayelus-logo:hover {
-  filter: blur(2px);
+  filter: blur(1px);
   transition: 1s;
+  scale: 1.1;
+  transform: rotateX(15deg) rotateY(15deg);
 }
 
 .rayelus-logo {
