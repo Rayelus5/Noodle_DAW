@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Obtén los elementos del DOM después de que esté completamente cargado
     const titlePage = document.getElementById("title-page");
-    titlePage.innerText = "NoodleDAW";
+    titlePage.innerText = "Noodle DAW";
     // -
 
     const cboxmain = document.getElementById("cboxmain");
