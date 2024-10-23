@@ -311,6 +311,7 @@ a {
 .btn-article:hover {
   background-color: var(--principal-color);
   transition: 1s ease;
+  padding: 12px 30px;
 }
 
 .rayelus-logo:hover {
