@@ -162,3 +162,82 @@ document.addEventListener('DOMContentLoaded', function() {
     // Asegúrate de que la función loginAccount esté disponible globalmente si es necesario
     window.loginAccount = loginAccount;
 });
+
+
+
+// DRAG IMG
+
+const draggableImage = document.querySelector('.draggable-image');
+
+let isDragging = false;
+let initialX = 0;
+let initialY = 0;
+let offsetX = 0;
+let offsetY = 0;
+
+draggableImage.addEventListener('mousedown', dragStart);
+draggableImage.addEventListener('touchstart', dragStart);
+
+function dragStart(event) {
+  if (event.type === 'touchstart') {
+    initialX = event.touches[0].clientX - offsetX;
+    initialY = event.touches[0].clientY - offsetY;
+  } else {
+    initialX = event.clientX - offsetX;
+    initialY = event.clientY - offsetY;
+  }
+
+  isDragging = true;
+
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('touchmove', drag);
+  document.addEventListener('mouseup', dragEnd);
+  document.addEventListener('touchend', dragEnd);
+}
+
+function drag(event) {
+  if (event.type === 'touchmove') {
+    event.preventDefault();
+    offsetX = event.touches[0].clientX - initialX;
+    offsetY = event.touches[0].clientY - initialY;
+  } else {
+    offsetX = event.clientX - initialX;
+    offsetY = event.clientY - initialY;
+  }
+
+  setTranslate(offsetX, offsetY);
+}
+
+function dragEnd() {
+  isDragging = false;
+
+  document.removeEventListener('mousemove', drag);
+  document.removeEventListener('touchmove', drag);
+  document.removeEventListener('mouseup', dragEnd);
+  document.removeEventListener('touchend', dragEnd);
+}
+
+function setTranslate(xPos, yPos) {
+  draggableImage.style.transform = `translate(${xPos}px, ${yPos}px)`;
+}
+
+// Add box shadow animation on first click
+draggableImage.addEventListener('click', addBoxShadow);
+
+let clickCount = 0;
+
+function addBoxShadow() {
+  clickCount++;
+
+  if (clickCount === 1) {
+    draggableImage.style.boxShadow = '0 0 10px rgba(255, 255, 255, 1)';
+    setTimeout(removeBoxShadow, 1000); // Remove box shadow after 1 second
+  } else if (clickCount === 2) {
+    draggableImage.style.boxShadow = '0 0 20px rgba(255, 255, 255, 1)';
+    clickCount = 0; // Reset click count
+  }
+}
+
+function removeBoxShadow() {
+  draggableImage.style.boxShadow = 'none';
+}
