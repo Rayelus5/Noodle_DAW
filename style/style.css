@@ -30,6 +30,12 @@ header {
   display: grid;
 }
 
+.draggable-image {
+  cursor: move;
+  position: relative;
+  transition: 0.5s linear;
+}
+
 .account-nav-icon {
   width: 25px;
   margin-right: 5px;
