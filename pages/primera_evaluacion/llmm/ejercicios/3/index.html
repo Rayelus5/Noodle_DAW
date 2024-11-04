@@ -24,11 +24,12 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h2 {
+        legend {
             text-align: center;
             color: #333;
             font-size: 1.5em;
             margin-bottom: 15px;
+            font-weight: bold;
         }
         form {
             display: flex;
@@ -79,7 +80,7 @@
     <section>
         <div class="container">
             <!-- Formulario de Registro de Usuario -->
-            <h2>Registro de Usuario</h2>
+            <legend>Registro de Usuario</legend>
             <form action="/registro" method="post">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required />
@@ -120,7 +121,7 @@
 
         <div class="container">
             <!-- Formulario de Encuesta -->
-            <h2>Encuesta</h2>
+            <legend>Encuesta</legend>
             <form action="/encuesta" method="post">
                 <label for="nombre_encuesta">Nombre:</label>
                 <input
@@ -146,7 +147,7 @@
 
         <div class="container">
             <!-- Formulario Carga de Archivos -->
-            <h2>Carga de Archivos</h2>
+            <legend>Carga de Archivos</legend>
             <form
                 action="/cargar_archivo"
                 method="post"
@@ -159,7 +160,7 @@
 
         <div class="container">
             <!-- Formulario de Contacto -->
-            <h2>Contacto</h2>
+            <legend>Contacto</legend>
             <form action="/contacto" method="post"
                 enctype="multipart/form-data">
                 <label for="nombre_contacto">Nombre:</label>

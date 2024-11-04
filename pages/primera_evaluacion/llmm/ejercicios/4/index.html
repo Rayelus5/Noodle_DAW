@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios - Ejercicio 4</title>
+</head>
+
+<style>
+    body {
+        background-color: #ffffff;
+        color: #000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    legend {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    form {
+        margin: 2rem auto;
+        width: 60%;
+        padding: 1.5rem;
+        border: 2px solid #000;
+        border-radius: 1rem;
+    }
+
+    fieldset {
+        border: none;
+    }
+
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    input[type="month"],
+    select {
+        width: 95%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 2px solid #000;
+        border-radius: 0.5rem;
+    }
+
+    /* Estilos generales para el input range */
+input[type="range"] {
+    -webkit-appearance: none; /* Elimina el estilo predeterminado en WebKit */
+    margin-top: 10px;
+    display: flex;
+    width: 95%; /* Ajusta el ancho */
+    height: 8px; /* Ajusta el grosor de la barra */
+    background: #ffffff; /* Color de fondo de la barra */
+    border-radius: 5px;
+    border: 1px solid #000; /* Bordes redondeados */
+    outline: none; /* Elimina el contorno al enfocarse */
+    opacity: 0.7; /* Transparencia */
+    transition: opacity 0.2s;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    resize: vertical;
+}
+
+input[type="range"]:hover {
+    opacity: 1; /* Opacidad completa cuando el cursor está sobre la barra */
+}
+
+
+
+    button {
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        border: 2px solid #000;
+        border-radius: 0.5rem;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #fff;
+        color: #000;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+    
+</style>
+
+<body>
+    <form action="ejerciciosFormularios2.php" method="post" enctype="multipart/form-data" autocomplete="on">
+        <fieldset>
+            <legend>Formulario de Registro de Matriculación</legend>
+            
+            <label for="nombre">Nombre del usuario:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="20" required><br><br>
+            
+            <label for="apellidos">Apellidos del usuario:</label>
+            <input type="text" id="apellidos" name="apellidos" required><br><br>
+            
+            <label for="fechaNacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="number" id="telefono" name="telefono" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="mesAno">Mes y año de matriculación:</label>
+            <input type="month" id="mesAno" name="mesAno" required><br><br>
+            
+            <label for="centro">Centro de matrícula:</label>
+            <input type="text" id="centro" name="centro" value="Luis Vélez" disabled><br><br>
+            
+            <label for="ciclo">Ciclo de matrícula:</label>
+            <select id="ciclo" name="ciclo" size="2" required>
+                <option value="informatica">Informática</option>
+                <option value="administracion">Administración</option>
+                <option value="marketing">Marketing</option>
+                <option value="turismo">Turismo</option>
+            </select><br><br>
+            
+            <label for="imagen">Subir imagen del alumno:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            <small>Si no puedes acceder al archivo, revisa tus permisos.</small><br><br>
+            
+            <label for="tituloESO">Título de la ESO (PDF):</label>
+            <input type="file" id="tituloESO" name="tituloESO" accept=".pdf" required><br><br>
+            
+            <button type="submit">Registrarse</button>
+            <button type="reset">Borrar Todo</button>
+        </fieldset>
+    </form>
+
+    <!---->
+
+    <form action="ejerciciosFormularios2.php" method="get">
+        <fieldset>
+            <legend>Encuesta de Satisfacción</legend>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="ejemplo@correo.com" readonly><br><br>
+            
+            <input type="hidden" name="clienteID" value="12345">
+            
+            <label>Amabilidad:</label>
+            <input type="range" name="amabilidad" min="1" max="10"><br><br>
+            
+            <label>Resolución:</label>
+            <input type="range" name="resolucion" min="1" max="10"><br><br>
+            
+            <label>Tiempo de Espera:</label>
+            <input type="range" name="espera" min="1" max="10"><br><br>
+            
+            <label>Calidad de Conexión:</label>
+            <input type="range" name="conexion" min="1" max="10"><br><br>
+            
+            <label>Experiencia General:</label>
+            <input type="range" name="experiencia" min="1" max="10"><br><br>
+            
+            <label for="satisfaccionGlobal">Satisfacción Global:</label>
+            <input type="number" id="satisfaccionGlobal" name="satisfaccionGlobal" min="1" max="10" required><br><br>
+            
+            <label>Compañía Telefónica:</label><br>
+            <input type="radio" id="compania1" name="compania" value="Compañía A" checked>
+            <label for="compania1">Compañía A</label><br>
+            <input type="radio" id="compania2" name="compania" value="Compañía B">
+            <label for="compania2">Compañía B</label><br>
+            <input type="radio" id="compania3" name="compania" value="Compañía C">
+            <label for="compania3">Compañía C</label><br><br>
+            
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea><br><br>
+            
+            <button type="submit">Enviar Encuesta</button>
+        </fieldset>
+    </form>
+
+    <!---->
+
+    <form action="ejerciciosFormularios2.php" method="post">
+        <fieldset>
+            <legend>Formulario de Reserva de Viajes</legend>
+            
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" name="origen" required><br><br>
+            
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required><br><br>
+            
+            <label for="fechaIda">Fecha de Ida:</label>
+            <input type="date" id="fechaIda" name="fechaIda" required><br><br>
+            
+            <label for="fechaVuelta">Fecha de Vuelta:</label>
+            <input type="date" id="fechaVuelta" name="fechaVuelta"><br><br>
+            
+            <label for="alojamiento">Tipo de Alojamiento:</label>
+            <select id="alojamiento" name="alojamiento" required>
+                <option value="hotel">Hotel</option>
+                <option value="hostal">Hostal</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="casa_rural">Casa Rural</option>
+            </select><br><br>
+            
+            <label for="personas">Número de personas:</label>
+            <input type="number" id="personas" name="personas" min="1" required><br><br>
+            
+            <label for="pension">Tipo de Pensión:</label><br>
+            <input type="radio" id="completa" name="pension" value="completa" required>
+            <label for="completa">Completa</label><br>
+            <input type="radio" id="media" name="pension" value="media">
+            <label for="media">Media</label><br>
+            <input type="radio" id="desayuno" name="pension" value="desayuno">
+            <label for="desayuno">Desayuno</label><br><br>
+            
+            <label>Características del Hotel:</label><br>
+            <input type="checkbox" id="petfriendly" name="caracteristicas[]" value="petfriendly">
+            <label for="petfriendly">Pet Friendly</label><br>
+            <input type="checkbox" id="aireAcondicionado" name="caracteristicas[]" value="aire_acondicionado">
+            <label for="aireAcondicionado">Aire Acondicionado</label><br>
+            <input type="checkbox" id="terraza" name="caracteristicas[]" value="terraza">
+            <label for="terraza">Terraza</label><br>
+            <input type="checkbox" id="piscina" name="caracteristicas[]" value="piscina">
+            <label for="piscina">Piscina</label><br><br>
+            
+            <button type="submit">Reservar</button>
+            <button type="reset">Borrar Todo</button>
+        </fieldset>
+    </form>
+    
+    
+</body>
+</html>
