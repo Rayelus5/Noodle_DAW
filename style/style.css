@@ -151,6 +151,20 @@ header {
   transition: 1s ease;
 }
 
+.noodle-emoji1:active {
+  rotate: 450deg;
+  scale: 1.7;
+  filter: blur(0px) hue-rotate(10deg);
+  transition: 0.8s ease;
+}
+
+.noodle-emoji2:active {
+  rotate: -450deg;
+  scale: 1.8;
+  filter: blur(0px) hue-rotate(10deg);
+  transition: 0.8s ease;
+}
+
 @keyframes flotar {
   0% {
       transform: translateY(0px)  rotate(0deg) scale(1);
