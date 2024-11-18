@@ -1,0 +1,80 @@
+/* 1. Aplicar una fuente distinta y un fondo de página */
+body {
+    font-family: Arial, sans-serif; /* Cambiar la fuente */
+    background-color: #f4f4f9; /* Fondo de página */
+    color: #333; /* Texto oscuro para contraste */
+    margin: 0; /* Ajustar margen */
+    padding: 0; /* Ajustar relleno */
+    text-align: center; /* Alinear contenido centrado */
+}
+
+/* 2. Estilo para el formulario */
+form {
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px auto; /* Centramos el formulario */
+    max-width: 400px; /* Ancho máximo */
+}
+
+/* 3. Estilo para los campos de entrada */
+form input[type="text"],
+form input[type="email"],
+form input[type="number"] {
+    width: 100%; /* Ancho completo */
+    padding: 8px; /* Relleno */
+    margin: 10px 0; /* Espaciado entre elementos */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes sutilmente redondeados */
+}
+
+/* 4. Botón de envío */
+form input[type="submit"] {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Relleno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor interactivo */
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049; /* Cambio de color en hover */
+}
+
+/* 5. Estilo para la tabla */
+table {
+    width: 80%; /* Ancho de la tabla */
+    margin: 20px auto; /* Centrado */
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-collapse: collapse; /* Colapsar bordes */
+    text-align: left; /* Alineación del texto */
+}
+
+/* 6. Encabezados de la tabla */
+table thead th {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 12px; /* Relleno */
+}
+
+/* 7. Filas de la tabla */
+table tbody tr {
+    border-bottom: 1px solid #ddd; /* Separación entre filas */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+}
+
+table tbody tr:hover {
+    background-color: #eaeaea; /* Cambio de color al pasar el ratón */
+}
+
+/* 8. Celdas de la tabla */
+table td, table th {
+    padding: 12px; /* Relleno */
+}

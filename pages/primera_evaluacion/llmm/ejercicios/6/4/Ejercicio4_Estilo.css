@@ -1,0 +1,89 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo del header: 10cm de alto */
+header {
+    background-color: #f4f4f9; /* Color de fondo para visibilidad */
+    height: 10cm; /* Altura en cm */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Encabezado principal: fuente de 24px */
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Párrafo: margen de 1in alrededor */
+p {
+    margin: 1in;
+    font-size: 16px; /* Fuente estándar */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Imagen: tamaño fijo de 200px de ancho */
+img {
+    width: 200px; /* Ancho fijo */
+    height: auto; /* Mantener proporción */
+}
+
+/* Botón: tamaño de 12pt */
+button {
+    font-size: 12pt; /* Tamaño del texto en puntos */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+}
+
+/* Contenedor del formulario: ancho del 60% de la pantalla */
+.form-container {
+    width: 60%; /* 60% del ancho de la ventana */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    height: 50vh; /* Altura: 50% de la ventana */
+}
+
+/* Encabezados h2 y h3: dimensionados en em */
+h2 {
+    font-size: 1.5em; /* Tamaño relativo al tamaño base */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.2em; /* Tamaño relativo al tamaño base */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Párrafo con margen del 5% del ancho del contenedor */
+section p {
+    margin: 5%;
+}
+
+/* Botón: tamaño de fuente relativo al tamaño raíz */
+button {
+    font-size: 1rem; /* Relativo al tamaño raíz (normalmente 16px) */
+}
+
+/* Imagen: ancho del 50% del ancho de la ventana */
+section img {
+    width: 50vw; /* Ancho: 50% de la ventana */
+    height: auto; /* Mantener proporción */
+}

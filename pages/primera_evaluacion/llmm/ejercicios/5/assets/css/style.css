@@ -1,0 +1,348 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar fijo */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #ff6a00;
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Sección de Productos */
+.productos {
+    padding: 5rem 1rem 2rem;
+    background-color: #f9f9f9;
+    margin-bottom: 100px;
+}
+
+.productos h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    height: 100%;
+    transition: transform 0.2s;
+}
+
+.producto-card:hover {
+    transform: scale(1.05);
+}
+
+.img-producto {
+    width: 100%;
+    height: 70%;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Stock */
+.stock {
+    padding: 2rem 1rem;
+    margin-bottom: 100px;
+}
+
+.stock h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.stock table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.stock th, .stock td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.stock th {
+    background-color: #ff6a00;
+    color: #fff;
+}
+
+/* Sección de Inicio de Sesión */
+.login {
+    padding: 3rem 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.login h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login label {
+    font-weight: bold;
+}
+
+.login input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login button {
+    padding: 0.7rem;
+    background-color: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.login button:hover {
+    background-color: #e55a00;
+}
+
+.productos button {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    background-color: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+    transition: 0.2s ease;
+}
+
+.productos button:hover {
+    background-color: #e55a00;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 0.9rem;
+    transition: 0.5s ease;
+}
+
+
+/* Sección de Promoción */
+.promocion {
+    width: 100%;
+    overflow: hidden;
+    background-image: url("https://aimg.kwcdn.com/material-put/1f66680f90/531bfc77-bf83-4f22-abf5-58fe7fbf6f58.png?imageView2/q/70/format/webp");
+    padding: 80px 20px 0px;
+}
+
+.promocion img {
+    width: 100%;
+    display: block;
+}
+
+.anuncio {
+    color: #fff;
+    font-weight: bold;
+    background-color: #111;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilos generales para la sección */
+#proveedor {
+    margin-top: 100px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para el título */
+#proveedor h2 {
+    color: #FF6A00; /* Color principal naranja */
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los fieldset */
+#proveedor fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las leyendas (legends) */
+#proveedor legend {
+    font-size: 1.2em;
+    color: #FF6A00;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* Estilos para las etiquetas de los campos */
+#proveedor label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+#proveedor input[type="text"],
+#proveedor input[type="email"],
+#proveedor input[type="tel"],
+#proveedor input[type="url"],
+#proveedor input[type="number"],
+#proveedor input[type="date"],
+#proveedor select,
+#proveedor textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+/* Efecto hover para campos de entrada */
+#proveedor input[type="text"]:focus,
+#proveedor input[type="email"]:focus,
+#proveedor input[type="tel"]:focus,
+#proveedor input[type="url"]:focus,
+#proveedor input[type="number"]:focus,
+#proveedor input[type="date"]:focus,
+#proveedor select:focus,
+#proveedor textarea:focus {
+    border-color: #FF6A00;
+    outline: none;
+}
+
+/* Estilos para los campos de selección múltiple */
+#proveedor select[multiple] {
+    height: auto;
+}
+
+/* Estilos para el botón de envío */
+#proveedor button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #FF6A00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* Efecto hover para el botón de envío */
+#proveedor button[type="submit"]:hover {
+    background-color: #e65b00;
+}
+
+/* Estilos para el textarea */
+#proveedor textarea {
+    resize: vertical;
+}
+
+/* Estilo para el campo de selección múltiple */
+#proveedor select[multiple] {
+    height: 100px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(150px, 1fr));
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

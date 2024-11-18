@@ -1,0 +1,26 @@
+/* 2. Fondo beige */
+body {
+    background-color: beige;
+    color: black; /* 3. Color de fuente negro */
+    font-size: 16px; /* 4. Tamaño de la fuente */
+}
+
+/* 5. Primeros encabezados (h1) en azul */
+h1 {
+    color: blue;
+}
+
+/* 6. Segundos encabezados (h2) en verde */
+h2 {
+    color: green;
+}
+
+/* 7. Cada elemento span será de color blueviolet */
+span {
+    color: blueviolet;
+}
+
+/* 8. Las palabras en cursiva serán de color marrón */
+em {
+    color: brown;
+}

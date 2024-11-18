@@ -1,0 +1,45 @@
+/* Archivo: styles.css */
+
+/* Estilos generales para el cuerpo */
+body {
+    background-color: #f7fafc;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333; /* Color genérico por defecto */
+}
+
+/* Estilo para encabezados */
+h1 {
+    color: orange;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+/* Estilo para párrafos */
+p {
+    color: #38a169;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las citas */
+blockquote {
+    font-style: italic;
+    margin: 20px 40px;
+    padding: 10px 20px;
+    border-left: 4px solid #38a169;
+    background-color: #f0fff4;
+    color: #333;
+}
