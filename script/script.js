@@ -241,3 +241,4 @@ function addBoxShadow() {
 function removeBoxShadow() {
   draggableImage.style.boxShadow = 'none';
 }
+

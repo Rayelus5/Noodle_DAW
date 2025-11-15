@@ -355,6 +355,89 @@ a {
   width: 30px;
 }
 
+.games-text {
+  opacity: 0.9;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 120%;
+  color: #ffdc17;
+  animation: fontsize 2s ease-in-out infinite;
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 60%;  
+  transform: translate(-35%, -60%);
+  transform: rotateZ(-10deg);
+  padding: 0px;
+  margin: 20px;
+  cursor: pointer;
+  text-shadow: 0px 0px 15px #000000c2;
+  text-align: center;
+  transition: 0.2s ease;
+  font-size: 18px;
+}
+
+.games-text:hover {
+  color: #a89110;
+  transition: 0.5s ease;
+}
+
+.games-text:active {
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+@keyframes fontsize {
+  0% {
+    font-size: 100%;
+  }
+  50% {
+    font-size: 115%;
+  }
+  100% {
+    font-size: 100%;
+  }
+}
+
+.juego-inv {
+  text-decoration: none;
+  animation: shine 3s ease-in-out infinite;
+  transition: 0.2s ease;
+}
+
+.juego-inv:hover {
+  color: #fff;
+  animation: shine2 1.5s ease-in-out infinite;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: 1s ease;
+}
+
+@keyframes shine {
+  0% {
+    color: var(--principal-color);
+  }
+  50% {
+    color: var(--third-color);
+    font-size: 95%;
+  }
+  100% {
+    color: var(--principal-color);
+  }
+}
+
+@keyframes shine2 {
+  0% {
+    color: var(--third-color);
+  }
+  50% {
+    color: #fff;
+    font-size: 90%;
+  }
+  100% {
+    color: var(--third-color);
+  }
+}
+
 @media screen and (min-width: 1100px) {
   .noodle-emoji2 {
     position: absolute;
@@ -430,6 +513,10 @@ a {
     rotate: -25deg;
     width: 70px;
     
+  }
+
+  .games-text {
+    font-size: 15px;
   }
 }
 
@@ -514,6 +601,10 @@ a {
     width: 40px;
     
   }
+
+  .games-text {
+    font-size: 10px;
+  }
   
 }
 
@@ -579,6 +670,10 @@ a {
     rotate: -25deg;
     width: 40px;
     
+  }
+
+  .games-text {
+    font-size: 10px;
   }
 }
 

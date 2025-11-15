@@ -29,9 +29,10 @@
     <div style="height: 30px;"></div>
     <div style="text-align: center;">
         
-      <h1 class="titulo-principal" style="font-family: 'Times New Roman', Times, serif;">Noodle DAW</h1>
+      <h1 class="titulo-principal" style="font-family: 'Times New Roman', Times, serif;">No<a class="juego-inv" href="games/snake/index.html" target="_blank">o</a>dl<a class="juego-inv" href="games/space_invaders/index.html" target="_blank">e</a> D<a class="juego-inv" href="games/tetris/index.html" target="_blank">A</a>W</h1>
       <img class="noodle-emoji2" src="https://whatemoji.org/wp-content/uploads/2020/07/Steaming-Bowl-Emoji-1080x1080.png" alt="">
       <img class="noodle-emoji1" src="https://whatemoji.org/wp-content/uploads/2020/07/Steaming-Bowl-Emoji-1080x1080.png" alt="">
+        <span onclick="changeText();" id="games-text" class="games-text">...</span>
         <p style="font-weight: bold;">Raimundo Palma Méndez | 1ºDAW 24-25 </p>
     </div>
     <div style="height: 30px;"></div>
@@ -68,7 +69,40 @@
     </footer>
 
     <script>
-        console.log("Bienvenido a mi página web!");
+      var textos = [
+        "Hello World!",
+        "patatas",
+        "Puedes jugar al snake en Noodle",
+        "Puedes jugar al tetris en Noodle",
+        "Puedes jugar al space invaders en Noodle",
+        "¡Esta web nunca se cae!",
+        "Moodle?",
+        "¿Qué es Moodle?",
+        "Revisa tus exámenes",
+        "ketchup o mayonesa",
+        "System.out.println(\"Hello World!\");",
+        "SELECT * FROM users;",
+        "<p>¡Hola Mundo!</p>",
+        "Esto es más fácil que hacer un chiquillo",
+        "Virguerias de la vida",
+        "huevos",
+        "while(true);",
+        "¿Ya se cayó la Moodle?",
+        "No me gusta la Moodle",
+        "Noodle DAW >>> Moodle",
+        "Gasolina o Diesel",
+        "..."
+      ];
+
+      var indiceAleatorio = Math.floor(Math.random() * textos.length);
+      var elementoTexto = document.getElementById("games-text");
+      elementoTexto.textContent = textos[indiceAleatorio];
+
+      function changeText() {
+        var indiceAleatorio = Math.floor(Math.random() * textos.length);
+        var elementoTexto = document.getElementById("games-text");
+        elementoTexto.textContent = textos[indiceAleatorio];
+      }
     </script>
     <script src="script/script.js"></script>
   </body>
