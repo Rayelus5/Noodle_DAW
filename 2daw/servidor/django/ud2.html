@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Formularios en Django (Autores CRUD)</title>
+
+        <style>
+    /* Tipografía general */
+    * {
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1.5;
+    }
+
+    body {
+      background: #1f1f1f;
+      color: #e6e6e6;
+      margin:0;
+      padding:24px;
+    }
+
+    .container {
+      max-width:1000px;
+      margin:0 auto;
+      background: #171717;
+      padding:22px;
+      border-radius:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      border: 1px solid #2b2b2b;
+    }
+
+    /* Estilos de títulos */
+    h1, h2, h3, h4 {
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+        border-left: 20px solid rgb(25, 75, 50);
+        border-bottom: 20px solid rgb(25, 75, 50);
+        padding-bottom: 8px;
+        padding-left: 25px;
+        color: #e8f5ea;
+    }
+
+    h2 {
+        font-size: 26px !important;
+        padding: 20px;
+        margin-top: 45px !important;
+        margin-bottom: 10px !important;
+        border-left: 12px solid rgb(54, 115, 85);
+        border-top: 5px solid rgb(54, 115, 85);
+        background: rgb(25, 75, 50);
+        color: #eaf8ee;
+    }
+
+    h3 {
+        font-size: 18px !important;
+        padding: 10px;
+        margin-top: 20px !important;
+        margin-bottom: 6px !important;
+        border-left: 24px solid rgb(54, 108, 115);
+        background: rgb(25, 49, 75);
+        color: #e2eef6;
+        text-align:left;
+    }
+
+    p {
+        margin-top: 12px !important;
+        color:#dcdcdc;
+    }
+
+    a {
+        color: rgb(57, 156, 107) !important;
+        text-decoration: none !important;
+        font-weight: 800;
+    }
+    a:hover { text-decoration: underline; }
+
+    pre {
+        background: #0f0f0f;
+        border: 1px solid #222;
+        padding: 16px 14px;
+        border-radius: 6px;
+        overflow: auto;
+        margin: 12px 0;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        tab-size: 4;
+        -moz-tab-size: 4;
+    }
+
+    pre code {
+        display: block;
+        background: transparent;
+        padding: 0;
+        border: none;
+        color: #eaeaea;
+        white-space: pre;
+    }
+
+    code.inline {
+      background:#111;
+      padding:2px 6px;
+      border-radius:4px;
+      border:1px solid #222;
+    }
+
+    ul, ol { margin-left:20px; color:#d9d9d9; }
+    table { border-collapse:collapse; margin:10px 0; color:#ddd; }
+    table, th, td { border:1px solid #444; }
+    th, td { padding:6px 12px; }
+
+    .note {
+      background:#2a2a12;
+      border:1px solid #4b4723;
+      padding:8px 12px;
+      border-radius:6px;
+      margin:10px 0;
+      color:#bfe5c9;
+      width: fit-content;
+    }
+
+    .center { text-align:center; }
+
+    .finger { animation: float 0.5s ease-in-out infinite alternate; }
+    @keyframes float { from { transform: translateY(0); } to { transform: translateY(20px); } }
+
+    @media (max-width:800px){
+      .container { padding:12px; }
+      h2 { padding:12px; font-size:20px; margin-top:30px; }
+    }
+  </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                Formularios en Django
+                <img
+                    src="https://static.djangoproject.com/img/logos/django-logo-negative.1d528e2cb5fb.png"
+                    width="120"
+                    style="vertical-align: middle; margin-left: 10px; background-color:rgba(3, 18, 11, 0.36); padding: 6px 6px; border-radius: 14px;">
+            </h1>
+
+            <p>En esta unidad veremos cómo trabajar con
+                <strong>formularios</strong> en Django. Tomaremos como ejemplo
+                una app de blog que tiene <code>Author</code> y
+                <code>Post</code>. Implementaremos un CRUD completo para
+                <strong>Autores</strong> (crear, listar, editar, eliminar)
+                usando <code>ModelForm</code> y vistas genéricas.</p>
+
+            <div class="center">
+                <img class="finger"
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhotemoji.com%2Fimages%2Femoji%2Fl%2F17zcrtb11cx2zl.png&f=1&nofb=1&ipt=98be3384ba263dd958fd6f0e1e62f492e7fe0b72366391dede7d2d354b3a3cbe"
+                    width="50" alt="emoji">
+            </div>
+
+            <!-- Sections for index detection -->
+            <h2 id="section-1">1. Modelos: Author y Post</h2>
+
+            <p>Definimos los modelos básicos. Aquí usamos una tabla para el
+                autor con nombre, email y bio. `Post` referencia a `Author` con
+                ForeignKey.</p>
+
+            <pre><code class="language-python"># blog/models.py
+from django.db import models
+from django.urls import reverse
+
+class Author(models.Model):
+    nombre = models.CharField(max_length=120)
+    email = models.EmailField(unique=True)
+    bio = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('authors:author-detail', kwargs={'pk': self.pk})
+
+class Post(models.Model):
+    titulo = models.CharField(max_length=200)
+    contenido = models.TextField()
+    autor = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='posts')
+    creado = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.titulo</code></pre>
+
+            <h2 id="section-2">2. forms.py: ModelForm para Author</h2>
+
+            <p>Usamos <code>ModelForm</code> para generar los campos del
+                formulario automáticamente y personalizar labels/validación si
+                hace falta.</p>
+
+            <pre><code class="language-python"># blog/forms.py
+from django import forms
+from .models import Author
+
+class AuthorForm(forms.ModelForm):
+    class Meta:
+        model = Author
+        fields = ['nombre', 'email', 'bio']
+        widgets = {
+            'bio': forms.Textarea(attrs={'rows':4, 'placeholder':'Breve biografía'}),
+        }</code></pre>
+
+            <h2 id="section-3">3. URLs para el CRUD de Autores</h2>
+
+            <p>Organizamos rutas dentro de un namespace
+                <code>authors</code>.</p>
+
+            <pre><code class="language-python"># blog/urls.py
+from django.urls import path
+from . import views
+
+app_name = 'authors'
+
+urlpatterns = [
+    path('authors/', views.AuthorListView.as_view(), name='author-list'),
+    path('authors/add/', views.AuthorCreateView.as_view(), name='author-add'),
+    path('authors/&lt;int:pk&gt;/', views.AuthorDetailView.as_view(), name='author-detail'),
+    path('authors/&lt;int:pk&gt;/edit/', views.AuthorUpdateView.as_view(), name='author-edit'),
+    path('authors/&lt;int:pk&gt;/delete/', views.AuthorDeleteView.as_view(), name='author-delete'),
+]</code></pre>
+
+            <h2 id="section-4">4. Vistas (Generic Class-Based Views)</h2>
+
+            <p>Usamos <code>ListView</code>, <code>CreateView</code>,
+                <code>UpdateView</code> y <code>DeleteView</code>.
+                <code>DeleteView</code> mostrará una plantilla de
+                confirmación.</p>
+
+            <pre><code class="language-python"># blog/views.py
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .models import Author
+from .forms import AuthorForm
+
+class AuthorListView(ListView):
+    model = Author
+    template_name = 'blog/authors_list.html'
+    context_object_name = 'authors'
+    paginate_by = 15
+
+class AuthorDetailView(DetailView):
+    model = Author
+    template_name = 'blog/author_detail.html'
+    context_object_name = 'author'
+
+class AuthorCreateView(CreateView):
+    model = Author
+    form_class = AuthorForm
+    template_name = 'blog/author_form.html'
+    success_url = reverse_lazy('authors:author-list')
+
+class AuthorUpdateView(UpdateView):
+    model = Author
+    form_class = AuthorForm
+    template_name = 'blog/author_form.html'
+    success_url = reverse_lazy('authors:author-list')
+
+class AuthorDeleteView(DeleteView):
+    model = Author
+    template_name = 'blog/author_confirm_delete.html'
+    success_url = reverse_lazy('authors:author-list')</code></pre>
+
+            <h2 id="section-5">5. Plantillas (templates)</h2>
+
+            <p>A continuación tienes ejemplos de las plantillas. Las tags de
+                Django están escapadas para verse correctamente en este
+                HTML.</p>
+
+            <h3>Listado de autores — <code>authors_list.html</code></h3>
+            <pre><code class="language-html">&lt;!-- templates/blog/authors_list.html --&gt;
+&lt;extends 'base.html'&gt;
+
+{% block content %}
+&lt;h1&gt;Autores&lt;/h1&gt;
+&lt;a href=&quot;{% url 'authors:author-add' %}&quot;&gt;Añadir autor&lt;/a&gt;
+&lt;ul&gt;
+{% for author in authors %}
+    &lt;li&gt;
+        &lt;a href=&quot;{% url 'authors:author-detail' pk=author.pk %}&quot;&gt;{{ author.nombre }}&lt;/a&gt;
+        &lt;small&gt;({{ author.email }})&lt;/small&gt;
+    &lt;/li&gt;
+{% empty %}
+    &lt;li&gt;No hay autores aún.&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+{% endblock %}</code></pre>
+
+            <h3>Formulario — <code>author_form.html</code> (crear/editar)</h3>
+            <pre><code class="language-html">&lt;!-- templates/blog/author_form.html --&gt;
+&lt;extends 'base.html'&gt;
+
+{% block content %}
+&lt;h1&gt;{{ view.object|default:'Nuevo autor' }}&lt;/h1&gt;
+
+&lt;form method=&quot;post&quot;&gt;
+    {% csrf_token %}
+    {{ form.as_p }}
+    &lt;button type=&quot;submit&quot;&gt;Guardar&lt;/button&gt;
+    &lt;a href=&quot;{% url 'authors:author-list' %}&quot;&gt;Cancelar&lt;/a&gt;
+&lt;/form&gt;
+{% endblock %}</code></pre>
+
+            <h3>Confirmación de eliminación —
+                <code>author_confirm_delete.html</code></h3>
+            <pre><code class="language-html">&lt;!-- templates/blog/author_confirm_delete.html --&gt;
+&lt;extends 'base.html'&gt;
+
+{% block content %}
+&lt;h1&gt;Eliminar autor: {{ object.nombre }}&lt;/h1&gt;
+&lt;p&gt;¿Seguro que desea eliminar este autor? Esta acción eliminará también sus posts.&lt;/p&gt;
+
+&lt;form method=&quot;post&quot;&gt;
+    {% csrf_token %}
+    &lt;button type=&quot;submit&quot;&gt;Confirmar eliminación&lt;/button&gt;
+    &lt;a href=&quot;{% url 'authors:author-list' %}&quot;&gt;Cancelar&lt;/a&gt;
+&lt;/form&gt;
+{% endblock %}</code></pre>
+
+            <h2 id="section-6">6. Registro en admin</h2>
+
+            <pre><code class="language-python"># blog/admin.py
+from django.contrib import admin
+from .models import Author, Post
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('nombre','email')
+    search_fields = ('nombre','email')
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('titulo','autor','creado')
+    list_filter = ('creado',)</code></pre>
+
+            <h2 id="section-7">7. Migraciones y comandos útiles</h2>
+
+            <pre><code class="language-bash"># Crear migraciones y aplicarlas
+python manage.py makemigrations
+python manage.py migrate
+
+# Crear superusuario para probar admin
+python manage.py createsuperuser
+
+# Ejecutar servidor
+python manage.py runserver</code></pre>
+
+            <h2 id="section-8">8. Notas sobre validación y UX</h2>
+
+            <ul>
+                <li>Validación adicional: puedes añadir <code>clean_email</code>
+                    en el <code>AuthorForm</code> para comprobar duplicados o
+                    dominios válidos.</li>
+                <li>UX: en plantillas añade mensajes (Django messages) para
+                    confirmar operaciones (creado/editado/eliminado).</li>
+                <li>Para eliminación "suave" (soft delete) considera un campo
+                    <code>is_active</code> en lugar de borrar filas.</li>
+            </ul>
+
+            <h3>Ejemplo de validación en el form</h3>
+            <pre><code class="language-python"># blog/forms.py (añadir método de limpieza)
+class AuthorForm(forms.ModelForm):
+    class Meta:
+        model = Author
+        fields = ['nombre','email','bio']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if Author.objects.filter(email__iexact=email).exists():
+            raise forms.ValidationError('Ya existe un autor con ese email.')
+        return email</code></pre>
+
+            <!-- <h2 id="section-9">9. Mejoras y siguientes pasos</h2>
+
+            <p>Posibles ampliaciones:</p>
+            <ul>
+                <li>Añadir paginación y búsqueda en la lista de autores.</li>
+                <li>Crear formularios para <code>Post</code> (creación/editar) y
+                    asociarlos a autores.</li>
+                <li>Subida de imágenes de autor (avatar) y validación de
+                    tamaño/formato.</li>
+                <li>Mostrar mensajes con <code>django.contrib.messages</code>
+                    tras operaciones CRUD.</li>
+            </ul> -->
+
+        </div>
+
+        <!-- Highlight.js: estilos + script -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+    </body>
+</html>
